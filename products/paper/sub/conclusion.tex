@@ -1,0 +1,20 @@
+The main objective of this summer paper was to document the data manipulation process. We describe how we create portfolios related to some of the key financial factors documented in the literature. The final database contains daily intraday stock returns and financial factor portfolios.
+
+In Section \ref{sec:introduction}, we briefly mentioned the goals after finalizing the database. The intention is to model through LASSO which predictor candidates among stock returns and portfolios of financial factors help to improve the predictive power of high-frequency asset pricing. Along the same line, we will be able to verify whether, unlike \citeonline{chinco2019sparse}, when including financial factors there is an increase in predictive power.
+
+Next steps include adding more robust methods to evaluate which predictor candidates increase predictive power, such as the Double Selection LASSO featured in \citeonline{feng2020taming}. This procedure considers model selection errors by selecting predictors that not only help explain the cross-section of expected returns, but are also useful in mitigating the problem of omitted variable bias.
+
+Furthermore, as LASSO is a tool whose predictor selection is based purely on a statistical rule, we would like to check whether there is economic meaning for the selected predictors through twitter data.
+
+
+
+%% PORTUGUESE VERSION
+
+%
+%O objetivo principal deste paper de verão foi documentar o processo de manipulação dos dados. Descrevemos como criamos portfólios relacionados a alguns dos principais fatores financeiros documentados na literatura. A base de dados final contém retornos intra diários de ações e dos portfólios de fatores financeiros.
+%
+%Na Seção \ref{sec:introduction}, mencionamos brevemente os objetivos após a finalização da base de dados. A intenção é modelar através do LASSO quais candidatos a preditores dentre retornos de ações e dos portfólios de fatores financeiros ajudam a melhorar o poder preditivo de apreçamento de ativos em alta frequência. Nesta mesma linha, poderemos verificar se diferentemente de \citeonline{chinco2019sparse}, ao incluir fatores financeiros há um aumento no poder preditivo.
+%
+%Os próximos passos incluem a adição de métodos mais robustos para avaliar quais candidatos a preditores aumentam o poder preditivo, como o LASSO de Seleção Dupla apresentado em \citeonline{feng2020taming}. Esse procedimento considera erros de seleção de modelo ao selecionar preditores que não somente ajudam a explicar o cross-section de retornos esperados, mas também são úteis em mitigar o problema de viés de variável omitida. 
+%
+%Além disso, como o LASSO é uma ferramenta cujo a seleção de preditores se baseia puramente em uma regra estatística, gostaríamos de verificar se há significado econômico para os preditores selecionados através de dados do twitter.

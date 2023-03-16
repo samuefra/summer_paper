@@ -5,9 +5,10 @@
 \usepackage{../sub/mystyle_article}
 
 
-\title{Hello World!}
-\author{}
-\date{}
+\title{Intra-daily 51 Financial Factors Database}
+\author{Guilherme Masuko \\
+Advisor: Marcelo C. Medeiros}
+\date{March 2023}
 %\affil{}
 
 
@@ -15,25 +16,36 @@
 
 % Title Page
 \begin{titlepage}
-\clearpage\maketitle
+\clearpage
+\maketitle
 \thispagestyle{empty}
 \begin{abstract}
+	This paper had as main goal to report how we will create an intra daily basis of some of the key financial factors for the US market. In Section \ref{sec:data} we theoretically show how we form 51 factors. The final database will have 51 financial factors in addition to the returns of stocks listed on the US stock exchange NYSE. The main novelty in this database is the intra-daily frequency of these variables.
+	
+	During the scope of the article, we discussed the use of dimensionality reduction tools that will be needed in the context of model selection. We motivated this discussion by bringing the next steps that include verifying whether these factors help in the predictive power of high-frequency returns.
+	
+	
+	%% PORTUGUESE VERSION
+	
+	%	Esse paper teve como principal objetivo reportar como criaremos uma base intra diária de alguns dos principais fatores financeiros para o mercado americano. Na Seção \ref{sec:data} mostramos teoricamente como formamos 51 fatores. A base de dados final contará com 51 fatores financeiros além dos retornos das ações listadas na bolsa americana NYSE. A principal novidade nesta base de dados é a frequência intra diária dessas variáveis.
+	%	
+	%	Durante o escopo do artigo, discutimos o uso de ferramentas de redução de dimensionalidade que serão necessárias no contexto de seleção de modelo. Motivamos essa discussão trazendo os próximos passos que abrangem verificar se esses fatores ajudam no poder preditivo de retornos em alta frequência.
 \end{abstract}
 \end{titlepage}
 
 % Introduction
 	\section{Introduction} \label{sec:introduction}
 	\input{./sub/introduction.tex}
-% Section
-	\section{Section} \label{sec:}
-	\input{./sub/section.tex}
+% Data
+	\section{Data} \label{sec:data}
+	\input{./sub/data.tex}
 % Conclusion
 	\section{Conclusion} \label{sec:conclusion}
 	\input{./sub/conclusion.tex}
 % References
 	\newpage
-	\bibliographystyle{apa}
-	\bibliography{}
+	\bibliographystyle{abntex2-alf}
+	\bibliography{ref}
 % Appendix
 	\newpage
 	\appendix

@@ -2,10 +2,16 @@
 \ProvidesPackage{mystyle_general}
 
 % Input
-\usepackage[english, american]{babel}
+\usepackage[english, portuguese, american]{babel}
+
+% References of labels
+\usepackage[hidelinks]{hyperref}
 
 % References
 \usepackage{natbib}
+
+% citeonline
+\usepackage[alf]{abntex2cite}
 
 \usepackage{ebgaramond}
 \usepackage[T1]{fontenc}
@@ -32,5 +38,4 @@
 	\def\cal{\mathcal}
 	\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
 	\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}} 
-
 

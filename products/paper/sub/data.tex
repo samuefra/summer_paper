@@ -1,0 +1,632 @@
+The first database of this work is TAQ Returns. The TAQ Returns database is a financial database that contains information on the returns of all stocks listed on the New York Stock Exchange (NYSE). We have around ten thousand assets entering and leaving the database from January 2003 to December 2020.
+
+The TAQ Returns database provides return data at different frequencies, ranging from daily frequency to minute and second frequencies. For example, you can get return data for intervals such as 30, 15, 5, and 1 minute, as well as 30, 15, and 5 seconds. This allows for a more detailed and accurate analysis of stock performance over different time frames.
+
+The second database was built using two different sets of data. The first contains data about PERMNO and TAQ\_TICKER. The second dataset also has the PERMNO column, which is the variable we connect the two datasets with, and several columns that give us the percentiles of companies on where they are located based on financial factors. Companies are grouped into ten percentiles. Thus, each firm receives values between 1 and 10.
+
+With the TAQ Returns database and this last one together, we can construct some factors widely used in finance literature. We show below how these factors are constructed.
+
+
+\begin{enumerate}
+	\item \textbf{Size} ($size$)
+	
+	Based on \citeonline{fama1993common} we can built the first two factors, $size$ and $value$.
+	
+	\begin{align*}
+		size &= \mathrm{ME}_{\text{Jun}} \\
+	\end{align*}
+	
+	They construct six portfolios, $S/L, S/M, S/H, B/L, B/M, B/H$ from the intersections of two $\mathrm{ME}$ (Market Equity - price times shares) and three $\mathrm{BE}/\mathrm{ME}$ (Ratio of Book Equity to Market Equity) groups. The size breakpoint for year $t$ is the median NYSE market equity at the end of June of year $t$, breaking the first group $\mathrm{ME}$ into two, $S$ (Small) and $B$ (Big). The $SMB$ (Small minus Big) factor is, therefore, the average return on the three small portfolios minus the average return on the three big portfolios.
+	
+	\begin{align*}
+		SMB &= \frac{1}{3}\left(S/L + S/M + S/H\right) - \frac{1}{3}\left(B/L + B/M + B/H\right)
+	\end{align*}
+	Rebalanced annually.
+
+
+	
+	\item \textbf{Value (annual)} ($value$)
+	
+	Follows \citeonline{fama1993common}. 
+	
+	\begin{align*}
+		value &= \frac { \mathrm{BE} }{ \mathrm{ME} } \\
+	\end{align*}
+
+	 The $\mathrm{BE}/\mathrm{ME}$ group is broken into three book-to-market equity groups based on the breakpoints until the 30th $\mathrm{BE}/\mathrm{ME}$ percentile is $L$ (Low), from 30th until 70th percentile is $M$ (Middle) and finally the top 30th percentile $H$ (High). $\mathrm{BE}/\mathrm{ME}$ for June of year $t$ is the book equity for the last fiscal year end in $t-1$ divided by $\mathrm{ME}$ for December of $t-1$. The $HML$ (High minus Low) factor is the average return on the two high portfolios minus the average return on the two low portfolios. 
+	
+	\begin{align*}
+		HML &= \frac{1}{2}\left(S/H + B/H\right) - \frac{1}{2}\left(S/L + B/L\right)
+	\end{align*}
+	Rebalanced annually.
+
+
+
+	\item \textbf{Gross Profitability} ($prof$)
+	
+	Follows \citeonline{novy2013other}. 
+	
+	\begin{align*}
+		prof &= \frac{ \mathrm{GP} }{ \mathrm{AT} } \\
+	\end{align*}
+	
+	Profitability is measured by the ratio of a firm's gross profits (revenues minus cost of goods sold) to its assets. The gross profitability factor is constructed using the basic methodology employed in the construction of $HML$. The strategy are long (short) firms in the top (bottom) tertile by NYSE breaks on the profitability sorting variable. The returns of this portfolio are value-weighted and rebalanced annually at the end of June based on its performance over the first 11 months of the preceding year and gross profits-to-assets. The $PMU$ (Profitable minus Unprofitable) factor is 
+	
+	\begin{align*}
+		PMU &= P - U
+	\end{align*}
+	where $GP$ is gross profits and $AT$ is total assets, $P$ and $U$ are, respectively, the value-weighted portfolio of the top 30th percentile and the bottom 30th percentile.
+	
+	
+	
+	\item \textbf{Value-Profitability} ($valprof$).
+	
+	Follows \citeonline{novy2013other}. 
+	
+	\begin{align*}
+		valprof = \operatorname{rank}(value) + \operatorname{rank}(prof)
+	\end{align*}
+	Sum of ranks in univariate sorts on book-to-market and profitability. Annual book-to-market and profitability values are used for the entire year. Rebalanced annually.
+	
+	The strategy that the author consider is construct within the 500 largest non-financial stocks for which gross profits-to-assets and book-to-market are both available. Each year these stocks are ranked on both their gross profits-to-assets and book-to-market ratios, from 1 (lowest) to 500 (highest). At the end of each June the strategy buys one dollar of each of the 150 stocks with the highest ($H$) combined profitability and value ranks, and it shorts one dollar of each of the 150 stocks with the lowest ($L$) combined ranks.
+		
+	\begin{align*}
+		HML = H - L
+	\end{align*}
+	
+	
+	
+	\item \textbf{Piotroski's F-score} ($F$-$score$)
+	
+	Follows \citeonline{piotroski2000value}. 
+	
+	\begin{align*}
+		F\text{-}score = & 1_{\text{IB}>0} + 1_{\Delta \text{ROA}>0} + 1_{\text{CFO}>0} + 1_{\text{CFO}>\text{IB}} + 1_{\Delta \text{DTA}<0 | \text{DLTT}=0 | \text{DLTT}_{-12}=0} \\
+		& + 1_{\Delta \text{ATL}>0} + 1_{\text{EqIss} \leq 0} + 1_{\Delta \text{GM}>0} + 1_{\Delta \text{ATO}>0}
+	\end{align*}
+	where $\mathrm{IB}$ is income before extraordinary items, $\mathrm{ROA}$ is income before extraordinary items scaled by lagged total assets, $\mathrm{CFO}$ is cash flow from operations, $\mathrm{DTA}$ is total long-term debt scaled by total assets, $\mathrm{DLTT}$ is total long-term debt, $\mathrm{ATL}$ is total current assets scaled by total current liabilities, $\mathrm{EqIss}$ is the difference between sales of common stock and purchases of common stock recorded on the cash flow statement, $\mathrm{GM}$ equals one minus the ratio of cost of goods sold and total revenues, and $\mathrm{ATO}$ equals total revenues, scaled by total assets. Rebalanced annualy.
+	
+	
+	
+	\item \textbf{Debit Issuance} ($debtiss$)
+	
+	Follows \citeonline{spiess1999long}. 
+	
+	\begin{align*}
+		debtiss = 1_{\text{DLTISS} \leq 0}
+	\end{align*}
+	Binary variable equal to one if long-term debt issuance indicated in statement of cash flow. Updated annually.
+	
+	
+	
+	\item \textbf{Share Repurchases} ($repurch$)
+	
+	Follows \citeonline{ikenberry1995market}. 
+	
+	\begin{align*}
+		repurch = 1_{\text{PRSTKC>0}}
+	\end{align*}
+	Binary variable equal to one if repurchase of common or preferred shares indicated in statement of cash flow. Updated annually.
+	
+	
+	
+	\item \textbf{Share Issuance (annual)} ($nissa$)
+	
+	Follows \citeonline{pontiff2008share}. 
+	
+	\begin{align*}
+		nissa = \frac{ \mathrm{shrout}_{\mathrm{Jun}} }{ \mathrm{shrout}_{\mathrm{Jun-12}} }
+	\end{align*}	
+	where shrout is the number of shares outstanding. Change in real number of shares outstanding from past June to June of the previous year. Excludes changes in shares due to stock dividends and splits, and companies with no changes in shrout.
+	
+	
+	
+	\item \textbf{Accruals} ($accruals$) 
+	
+	Follows \citeonline{sloan1996stock}. 
+	
+	\begin{align*}
+		accruals =\frac{\Delta \mathrm{ACT}-\Delta \mathrm{CIIE}-\Delta \mathrm{LCT}+\Delta \mathrm{DLC}+\Delta \mathrm{TXP}-\Delta \mathrm{DP}}{(\mathrm{AT}+\mathrm{AT}_{-12}) / 2}
+	\end{align*}
+	where $\Delta \mathrm{ACT}$ is the annual change in total current assets, $\Delta \mathrm{CHE}$ is the annual change in total cash and short-term investments, $\Delta \mathrm{LCT}$ is the annual change in current liabilities, $\Delta \mathrm{DLC}$ is the annual change in debt in current liabilities, $\Delta \mathrm{TXP}$ is the annual change in income taxes payable, $\Delta \mathrm{DP}$ is the annual change in depreciation and amortization, and $\left(\mathrm{AT}+\mathrm{AT}_{-12}\right) / 2$ is average total assets over the last two years. Rebalanced annually.
+	
+	
+	
+	\item \textbf{Asset Growth} ($growth$) 
+	
+	Follows \citeonline{cooper2008asset}. 
+	
+	\begin{align*}
+		growth = \frac{ \mathrm{AT} }{ \mathrm{AT}_{-12} }
+	\end{align*}	
+	Rebalanced annually.
+	
+	\item \textbf{Asset Turnover} ($aturnover$) 
+	
+	Follows \citeonline{soliman2008use} and \citeonline{novy2013other}.
+	
+	\begin{align*}
+		aturnover = \frac{ \mathrm{SALE} }{ \mathrm{AT} }
+	\end{align*}	
+	Sales to total assets. Rebalanced annually.
+	
+	Portfolios are constructed using a quintile sort, where Low ($L$) represents the lowest 20th percentile and High ($H$) represents the highest 20th percentile based on New York Stock Exchange (NYSE) break points, and are rebalanced each year at the end of June
+	
+	\begin{align*}
+		HML = H - L
+	\end{align*}
+	
+	
+	
+	\item \textbf{Gross Margins} ($gmargins$). 
+	
+	Follows \citeonline{novy2013other}.
+	
+	\begin{align*}
+		gmargins = \frac{ \mathrm{GP} }{ \mathrm{SALE} }
+	\end{align*}
+	where $\mathrm{GP}$ is gross profits and $\mathrm{SALE}$ is total revenues. Rebalanced annually.
+	
+	Portfolios are constructed using a quintile sort, where Low ($L$) represents the lowest 20th percentile and High ($H$) represents the highest 20th percentile based on New York Stock Exchange (NYSE) break points, and are rebalanced each year at the end of June.
+		
+	\begin{align*}
+		HML = H - L
+	\end{align*}
+	 
+	 
+	 
+	\item \textbf{Dividend Yield} ($divp$) 
+	
+	Follows \citeonline{naranjo1998stock}. 
+	
+	\begin{align*}
+		divp = \frac{ \mathrm{Div} }{ \mathrm{ME}_{\text{Dec}} }
+	\end{align*}
+	Dividend scaled by price. Both are measured in December of the year $t-1$ or $t-2$ (for returns in months prior to July). Rebalanced annually.
+	
+	
+	
+	\item \textbf{Earnings/Price} ($ep$)
+	
+	Follows \citeonline{basu1977investment}.
+	
+	\begin{align*}
+		ep = \frac{ \mathrm{IB} }{ \mathrm{ME}_{\text{Dec}} }
+	\end{align*}
+	Net income scaled by market value of equity. Updated annually.
+	
+	
+	
+	\item \textbf{Cash Flow / Market Value of Equity} ($cfp$) 
+	
+	Follows \citeonline{lakonishok1994contrarian}. 
+	
+	\begin{align*}
+		cfp = \frac{ \mathrm{IB} + \mathrm{DP} }{ \mathrm{ME}_{\text{Dec}} }
+	\end{align*}
+	Net income plus depreciation and amortization, all scaled by market value of equity measured at the same date. Updated annually.
+	
+	
+	
+	\item \textbf{Net Operating Assets} ($noa$)
+	
+	Follows \citeonline{hirshleifer2004investors}.
+	
+	\begin{align*}
+		noa = \frac{ ( \mathrm{AT} - \mathrm{CHE}) - (\mathrm{AT} - \mathrm{DLC} - \mathrm{DLTT} - \mathrm{MIB} - \mathrm{PSTK} - \mathrm{CEQ} ) }{ \mathrm{AT}_{-12} }
+	\end{align*}
+	where $\mathrm{AT}$ is total assets, $\mathrm{CHE}$ is cash and short-term investments, $\mathrm{DLC}$ is debt in current liabilities, $\mathrm{DLTT}$ is long term debt, $\mathrm{MIB}$ is non-controlling interest, $\mathrm{PSTK}$ is preferred capital stock, and $\mathrm{CEQ}$ is common equity. Updated annually.
+	
+	
+	
+	\item \textbf{Investment} ($inv$).
+	
+	Follows \citeonline{chen2011alternative}.
+	
+	\begin{align*}
+	inv = \frac{ \Delta \mathrm{PPEGT} + \Delta \mathrm{INVT} }{ \mathrm{AT}_{-12} }
+	\end{align*}
+	where $\Delta \mathrm{PPEGT}$ is the annual change in gross total property, plant, and equipment, $\Delta \mathrm{INVT}$ is the annual change in total inventories, and $\mathrm{AT}_{-12}$ is lagged total assets. Rebalanced annually, uses the full period.
+	
+	
+	
+	\item \textbf{Investment-to-Capital} ($invcap$). 
+	
+	Follows \citeonline{xing2008interpreting}. 
+	
+	\begin{align*}
+		invap = \frac{ \mathrm{CAPX} }{ \mathrm{PPENT} }
+	\end{align*}
+	Investment to capital is the ratio of capital expenditure (Compustat item $\mathrm{CAPX}$) over property, plant, and equipment (Compustat item $\mathrm{PPENT}$).
+	
+	
+	
+	\item \textbf{Invetment Growth} ($growth$). 
+	
+	Follows \citeonline{xing2008interpreting}. 
+	
+	\begin{align*}
+		growth = \frac{ \mathrm{CAPX} }{ \mathrm{CAPX}_{-12} }
+	\end{align*}
+	Investment growth is the percentage change in capital expenditure (Compustat item $(\mathrm{CAPX})$
+	
+	
+	
+	\item \textbf{Sales Growth} ($sgrouth$).
+	
+	Follows \citeonline{lakonishok1994contrarian}.
+	
+	\begin{align*}
+		sgrowth = \frac{ \mathrm{SALE} }{ \mathrm{SALE}_{-12} }
+	\end{align*}
+	Sales growth is the percent change in net sales over turnover (Compustat item $\mathrm{SALE}$).
+	
+	
+	
+	\item \textbf{Leverage} ($lev$). 
+	
+	Follows \citeonline{bhandari1988debt}. 
+	
+	\begin{align*}
+		lev = \frac{ \mathrm{AT} }{ \mathrm{ME}_{\text{Dec}} }
+	\end{align*}
+	Market leverage is the ratio of total assets (Compustat item $\mathrm{AT}$) over the market value of equity. Both are measured in December of the same year.
+	
+	
+	
+	\item \textbf{Return on Assets (annual)} ($roma$).
+	
+	Follows \citeonline{chen2011alternative}. 
+	
+	\begin{align*}
+		roaa = \frac{ \mathrm{IB} }{ \mathrm{AT} }
+	\end{align*}
+	Net income scaled by total assets. Updated annually.
+	
+	
+	
+	\item \textbf{Return on Equity (annual)} ($roea$). 
+	
+	Follows \citeonline{haugen1996commonality}. 
+	
+	\begin{align*}
+		roea = \frac{ \mathrm{IB} }{ \mathrm{BE} }
+	\end{align*}
+	Net income scaled by book value of equity. Updated annually.
+	
+	
+	
+	\item \textbf{Sales-to-Price} ($sp$).
+	
+	
+	Follows \citeonline{barbee1996sales}. 
+	
+	\begin{align*}
+		sp =\frac{ \mathrm{SALE} }{ \mathrm{ME}_{\text{Dec}} }
+	\end{align*}
+	Total revenues divided by stock price. Updated annually.
+	
+	
+	
+	\item \textbf{Growth in LTNOA} ($gltnoa$). 
+	
+	Follows \citeonline{fairfield2003accrued}. 
+	
+	\begin{align*}
+		gltnoa = \mathrm{GRNOA} - \mathrm{ACC}
+	\end{align*}
+	Growth in Net Operating Assets minus Accruals, where 
+	
+	\begin{align*}
+		\mathrm{GRNOA} &= \mathrm{NOA} - \mathrm{NOA}_{\text{-12}} \\
+		\mathrm{NOA} &= \frac{ \mathrm{RECT} + \mathrm{INVT} + \mathrm{ACO} + \mathrm{PPENT} + \mathrm{INTAN} + \mathrm{AO} - \mathrm{AP} - \mathrm{LCO} - \mathrm{LO} }{ \mathrm{AT} } \\
+		\mathrm{ACC} &= \frac{ \Delta\mathrm{RECT} + \Delta\mathrm{INVT} + \Delta\mathrm{ACO} - \Delta\mathrm{AP} - \Delta\mathrm{LCO} - \mathrm{DP} }{ \left( \Delta\mathrm{AT} / 2 \right) } \\
+		\Delta\mathrm{RECT} &= \mathrm{RECT} - \mathrm{RECT}_{-12} \\
+		\Delta\mathrm{INVT} &= \mathrm{INVT} - \mathrm{INVT}_{-12} \\
+		\Delta\mathrm{ACO} &= \mathrm{ACO} - \mathrm{ACO}_{-12} \\
+		\Delta\mathrm{AP} &= \mathrm{AP} - \mathrm{AP}_{-12} \\
+		\Delta\mathrm{LCO} &= \mathrm{LCO} - \mathrm{LCO}_{-12} \\
+		\Delta\mathrm{AT} &= \mathrm{AT} - \mathrm{AT}_{-12} \\
+	\end{align*}
+	where $\mathrm{RECH}$ = Receivables, $\mathrm{INVT}$ = Total Inventory, $\mathrm{ACO}$ = Current Assets, $\mathrm{AP}$ = Accounts Payable, $\mathrm{LCO}$ =  Current Liabilities (Other), $\mathrm{DP}$ = Depreciation and Amortization, $\mathrm{AT}$ = Assets, $\mathrm{PPENT}$ = Property, Plant, and Equipment (net), $\mathrm{INTAN}$ = Intangible Assets, $\mathrm{AO}$ = Assets (Other), $\mathrm{LO}$ = Liabilities (Other). Updated annually.
+	
+	
+
+	\item \textbf{Momentum (6m)} ($mom$). 
+	
+	Follows \citeonline{jegadeesh1993returns}. 
+	
+	\begin{align*}
+		mom = \sum_{l=2}^7 r_{t-l}
+	\end{align*}
+	Cumulated past performance in the previous 6 months by skipping the most recent month. Rebalanced monthly.
+	
+	
+	
+	\item \textbf{Industry Momentum} ($indmom$). 
+	
+	Follows \citeonline{moskowitz1999industries}. 
+	
+	\begin{align*}
+		indmom = \operatorname{rank} \left( \sum_{l=1}^6 r_{t-l}^{\text{ind}} \right)
+	\end{align*}
+	In each month, the Fama and French 49 industries are ranked on their value-weighted past 6-months performance. Rebalanced monthly.
+	
+	
+	
+	\item \textbf{Value-Momentum} ($valmom$). 
+	
+	Follows \citeonline{novy2013other}. 
+	
+	\begin{align*}
+		valmom =\operatorname{rank}(value) + \operatorname{rank}(mom)
+	\end{align*}
+	Sum of ranks in univariate sorts on book-to-market and momentum. Annual book-to-market values are used for the entire year. Rebalanced monthly.
+	
+	
+	
+	\item \textbf{Value-Momentum-Profitability} ($malmomprof$). 
+	
+	Follows \citeonline{novy2013other}. 
+	
+	\begin{align*}
+		valmomprof =\operatorname{rank}(value) + \operatorname{rank}(prof) + \operatorname{rank}(mom)
+	\end{align*}
+	Sum of ranks in umivariate sorts on book-to-market, profitability, and momentum. Annual book-to-market and profitability values are used for the entire year. Rebalanced monthly.
+	
+	
+	
+	\item \textbf{Short Interest} ($shortint$). 
+	
+	Follows \citeonline{dechow1998relation}. 
+	
+	\begin{align*}
+		shortint = \frac{ \text{Shares Shorted} }{ \text{Shares Outstanding} }
+	\end{align*}	
+	Updated monthly.
+	
+	
+	
+	\item \textbf{Momentum (1 year)} ($mom12$). 
+	
+	Follows \citeonline{jegadeesh1993returns}. 
+	
+	\begin{align*}
+		mom12 = \sum_{l=2}^{12} r_{t-l}
+	\end{align*}
+	Cumulated past performance in the previous year by skipping the most recent month. Rebalanced monthly.
+	
+	
+	
+	\item \textbf{Momentum-Reversal} ($momrev$). 
+	
+	Follows \citeonline{jegadeesh1993returns}. 
+	
+	\begin{align*}
+		momrev = \sum_{d=14}^{19} r_{t-l}
+	\end{align*}
+	Buy and hold returns from $t-19$ to $t-14$. Updated monthly.
+	
+	
+	
+	\item \textbf{Long-term Reversals} ($lrrev$). 
+	
+	Follows \citeonline{de1985does}. 
+	
+	\begin{align*}
+		lrrev = \sum_{l=13}^{60} r_{t-l} 
+	\end{align*}
+	Cumulative returns from $t-60$ to $t-13$. Updated monthly.
+	
+	
+	
+	\item \textbf{Value (monthly)} ($valuem$). 
+	
+	Follows \citeonline{asness2013devil}. 
+	
+	\begin{align*}
+		valuem = \frac{ \mathrm{BEQ}_{-3} }{ \mathrm{ME}_{-1} }
+	\end{align*}
+	Book-to-market ratio using the most up-to-date prices and book equity (appropriately lagged). Rebalanced monthly.
+	
+	
+	
+	\item \textbf{Share Issuance (monthly)} ($nissm$).
+	
+	Follows \citeonline{pontiff2008share}. 
+	
+	\begin{align*}
+		nissm = \frac{ \mathrm{shrout}_{t-13} }{ \mathrm{shrout}_{t-1} }
+	\end{align*}
+	where $\mathrm{shrout}$ is the number of shares outstanding. Change in real number of shares outstanding from $t-13$ to $t-1$. Excludes changes in shares due to stock dividends and splits, and companies with no changes in $\mathrm{shrout}$.
+	
+	
+	
+	\item \textbf{PEAD (SUE)} ($sue$). 
+	
+	Follows \citeonline{foster1984earnings}. 
+	
+	\begin{align*}
+		sue = \frac{ \mathrm{IBQ} - \mathrm{IBQ}_{-12} }{ \sigma_{\mathrm{IBQ}_{-24}:\mathrm{IBQ}_{-3} } }
+	\end{align*}
+	where $\mathrm{IBQ}$ is income before extraordinary items (updated quarterly), and $\sigma_{\mathrm{IBQ}_{-24}:\mathrm{IBQ}_{-3}}$ is the standard deviation of $\mathrm{IBQ}$ in the past two years skipping the most recent quarter. Earnings surprises are measured by Standardized Unexpected Earnings (SUE), which is the change in the most recently announced quarterly earnings per share from its value announced four quarters ago divided by the standard deviation of this change in quarterly earnings over the prior eight quarters. Rebalanced monthly.
+	
+	
+	
+	\item \textbf{Return on Book Equity} ($roe$). 
+	
+	Follows \citeonline{chen2011alternative}. 
+	
+	\begin{align*}
+		roe = \frac{ \mathrm{IBQ} }{ \mathrm{BEQ}_{-3} }
+	\end{align*}
+	where $\mathrm{IBQ}$ is income before extraordinary items (updated quarterly), and $\mathrm{BEQ}$ is book value of equity. Rebalanced monthly.
+	
+	
+	
+	\item \textbf{Return on Market Equity} ($rome$). 
+	
+	Follows \citeonline{chen2011alternative}. 
+	
+	\begin{align*}
+		rome = \frac{ \mathrm{IBQ} }{ \mathrm{ME}_{-4} }
+	\end{align*}
+	where $\mathrm{IBQ}$ is income before extraordinary items (updated quarterly), and $\mathrm{ME}$ is market value of equity. Rebalanced monthly.
+	
+	
+	
+	\item \textbf{Return on Assets} ($roa$). 
+	
+	Follows \citeonline{chen2011alternative}. 
+	
+	\begin{align*}
+		roa = \frac{ \mathrm{IBQ} }{ \mathrm{ATC}_{-3} }
+	\end{align*}
+	Net income scaled by total assets. Updated quarterly.
+	
+	
+	
+	\item \textbf{Short-term Reversal} ($strev$). 
+	
+	Follows \citeonline{jegadeesh1990evidence}. 
+	
+	\begin{align*}
+		strev = r_{t-1}
+	\end{align*}	
+	Return in the previous month. Updated monthly.
+	
+	
+	
+	\item \textbf{Idiosyncratic Volatility} ($ivol$). 
+	
+	Follows \citeonline{ang2006cross}. 
+	
+	\begin{align*}
+		ivol = \operatorname{std} \left( R_{i,t} - \beta_i R_{M,t} - s_i SMB_t - h_i HML_t \right)
+	\end{align*}
+	The standard deviation of the residual from firm-level regression of daily stock returns on the daily innovations of the Fama and French three-factor model using the estimation window of three months. Lagged one month.
+	
+
+
+	\item \textbf{Beta Arbitrage} ($beta$). 
+	
+	Follows \citeonline{cooper2008asset}. 
+	
+	\begin{align*}
+		beta = \beta_{t-60:t-1}
+	\end{align*}
+	Beta with respect to the CRSP equal-weighted return index. Estimated over the past 60 months (minimum 36 months) using daily data and lagged one month. Updated monthly.
+	
+	
+		
+	\item \textbf{Seasonality} ($season$). 
+	
+	Follows \citeonline{heston2008seasonality}. 
+	
+	\begin{align*}
+		season = \sum_{l=1}^5 r_{t-l\operatorname{x}12}
+	\end{align*}
+	Average monthly return in the same calendar month over the last 5 years. As an example, the average return from prior Octobers is used to predict returns this October. The firm needs at least one year of data to be included in the sample. Updated monthly.
+	
+	
+	
+	\item \textbf{Industry Relative Reversals} ($indrrev$). 
+	
+	Follows \citeonline{da2014closer}. 
+	
+	\begin{align*}
+		indrrev = r_{-1} - r^{ind}_{-1}
+	\end{align*}
+	where $r$ is the return on a stock and $r^ind$ is return on its industry. Difference between a stocks' prior month's return and the prior month's return of its industry (based on the Fama and French 49 industries). Updated monthly.
+	
+	
+	
+	\item \textbf{Industry Relative Reversals (Low Volatility)} ($indrrevlv$). 
+	
+	Follows \citeonline{da2014closer}. 
+	
+	\begin{align*}
+		indrrevlv = r_{-1} - r^{ind}_{-1}
+	\end{align*}
+	if vol ¡ NYSE median, where $r$ is the return on a
+	stock and rind is return on its industry. Difference between a stocks' prior month's return and the prior month's return of its industry (based on the Fama and French 49 industries). Only stocks with idiosyncratic volatility lower than the NYSE median for month are included in the sorts. Updated monthly.
+	
+	
+	
+	\item \textbf{Industry Momentum-Reversal} ($indmomrev$). 
+	
+	Follows \citeonline{moskowitz1999industries}. 
+	
+	\begin{align*}
+		indmomrev = \operatorname{rank}(indmom) + \operatorname{rank}(indrrevlv)
+	\end{align*}
+	Sum of Fama and French 49 industries ranks on industry momentum and industry relative reversals (low vol). Rebalanced monthly.
+	
+	
+	
+	\item \textbf{Composite Issuance} ($ciss$). 
+	
+	Follows \citeonline{daniel2006market}. 
+	
+	\begin{align*}
+		ciss = \log\left( \frac{ \mathrm{ME}_{t-13} }{ \mathrm{ME}_{t-60} } \right) - \sum^60_{l=13} r_{t-l}
+	\end{align*}
+	where $r$ is the log return on the stock and $\mathrm{ME}$ is total market equity. Updated monthly.
+	
+	
+	
+	\item \textbf{Price} ($price$). 
+	
+	Follows \citeonline{blume1973price}. 
+	
+	\begin{align*}
+		price = \log\left( \frac{ \mathrm{ME} }{ \mathrm{shrout} } \right)
+	\end{align*}
+	where $\mathrm{ME}$ is market equity and $\mathrm{shrout}$ is the number of shares outstanding. Log of stock price. Updated monthly.
+	
+	
+	
+	\item \textbf{Firm Age} ($age$). 
+	
+	Follows \citeonline{barry1984differential}. 
+	
+	\begin{align*}
+		age = \log(1 + \text{number of months since listing})
+	\end{align*}
+	The number of months that a firm has been listed in the CRSP database.
+	
+	
+	
+	\item \textbf{Share Volume} ($shvol$). 
+	
+	Follows \citeonline{datar1998liquidity}. 
+	
+	\begin{align*}
+		shvol = \frac{1}{3} \sum^3_{i=1} \frac{ \mathrm{volume}_{t-i} }{ \mathrm{shrout}_t }
+	\end{align*}
+	Average number of shares traded over the previous three months scaled by shares out-standing. Updated monthly.
+	
+	
+	
+	\item \textbf{Cash flow duration} ($dur$). 
+	
+	Follows ?. 
+	
+	\begin{align*}
+		dur = \frac{ \sum_t \mathrm{PV}_0 \left( t \times \mathrm{CF}_t \right) }{ P_0 }
+	\end{align*}
+	Present value of expected cashflows. Cashflows' components (from clean surplus identity, ROE and book equity growth) are forecasted using AR(1). Sums are discounted using a constant discount rate. Rebalanced monthly.
+		
+\end{enumerate}
+
+
+
+%% PORTUGUESE VERSION
+
+%A primeira base de dados deste trabalho é o TAQ Returns. O banco de dados TAQ Returns é um banco de dados financeiro que contém informações sobre os retornos de todas as ações listadas na Bolsa de Valores de Nova York (NYSE). Temos cerca de dez mil ativos entrando e saindo do banco de dados no período de janeiro de 2003 a dezembro de 2020.
+%
+%O banco de dados TAQ Returns fornece dados de retorno em diferentes frequências, variando de frequência diária a frequências por minuto e por segundo. Por exemplo, você pode obter dados de retorno para intervalos como 30, 15, 5 e 1 minuto, bem como 30, 15 e 5 segundos. Isso permite uma análise mais detalhada e precisa do desempenho das ações em diferentes intervalos de tempo.
+%
+%O segundo banco de dados foi montado usando dois conjuntos diferentes de dados. O primeiro contém dados sobre PERMNO e TAQ\_TICKER. O segundo conjunto de dados também possui a coluna PERMNO, que é a variável que conectamos os dois conjuntos de dados e várias colunas que nos fornecem o percentis de empresas sobre onde estão localizadas com base em fatores financeiros. As empresas estão agrupadas em dez percentis. Assim, cada firma recebe valores entre 1 e 10.
+%
+%Com o banco de dados TAQ Returns e este último juntos, podemos construir alguns fatores amplamente utilizados na literatura de finanças. Mostramos a seguir como esses fatores são construídos.

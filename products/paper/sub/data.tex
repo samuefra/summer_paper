@@ -1,10 +1,8 @@
-The first database of this work is TAQ Returns. The TAQ Returns database is a financial database that contains information on the returns of all stocks listed on the New York Stock Exchange (NYSE). We have around ten thousand assets entering and leaving the database from January 2003 to December 2020.
+The first database of this work is TAQ Returns. The TAQ Returns Database is a financial database that contains information about returns for all stocks listed on the New York Stock Exchange (NYSE). We have around ten thousand assets entering and leaving the database from January 2003 to December 2020.
 
 The TAQ Returns database provides return data at different frequencies, ranging from daily frequency to minute and second frequencies. For example, you can get return data for intervals such as 30, 15, 5, and 1 minute, as well as 30, 15, and 5 seconds. This allows for a more detailed and accurate analysis of stock performance over different time frames.
 
-The second database was built using two different sets of data. The first contains data about PERMNO and TAQ\_TICKER. The second dataset also has the PERMNO column, which is the variable we connect the two datasets with, and several columns that give us the percentiles of companies on where they are located based on financial factors. Companies are grouped into ten percentiles. Thus, each firm receives values between 1 and 10.
-
-With the TAQ Returns database and this last one together, we can construct some factors widely used in finance literature. We show below how these factors are constructed.
+The second database was built using two different sets of data. The first contains data on PERMNO, TAQ\_TICKER and some firm characteristics. The second dataset also has the PERMNO column, which is the variable we connect the two datasets with, and several columns that give us the percentiles of companies on where they are located based on financial factors. Companies are grouped into ten percentiles. Thus, each firm receives values between 1 and 10 for each factor. Next, we show how each financial factor was constructed.
 
 
 \begin{enumerate}
@@ -620,13 +618,26 @@ With the TAQ Returns database and this last one together, we can construct some 
 \end{enumerate}
 
 
+This database, which we will call Factors, contains daily data from January 2005 to December 2019.
+
+Figure \ref{fig:match} presents a graph that illustrates the intersection of firms between the Factors Database and the TAQ Returns Database, during the period from January 2005 to December 2019. The graph depicts the evolution of the number of stocks present in each of the bases, as well as the quantity of stocks in which there is a match in both bases and that will be used for the formation of the portfolios.
+
+Using the TAQ Returns and Factors databases, it is possible to create portfolios of various financial factors that are widely used in the literature. However, the construction of these portfolios can vary greatly between studies. To ensure standardization in the creation of these portfolios, we adopted four different strategies. The first two strategies consist of forming portfolios by longing (shorting) stocks that are above (below) the median. The difference between these strategies will be the way of weighting the assets, which can be equal weighted or value weighted. The other two methodologies will use the 30th and 70th percentiles as breakpoints for stock selection, that is, by longing (shorting) stocks in the upper tertile (lower tertile).
+
+
 
 %% PORTUGUESE VERSION
-
+%
 %A primeira base de dados deste trabalho é o TAQ Returns. O banco de dados TAQ Returns é um banco de dados financeiro que contém informações sobre os retornos de todas as ações listadas na Bolsa de Valores de Nova York (NYSE). Temos cerca de dez mil ativos entrando e saindo do banco de dados no período de janeiro de 2003 a dezembro de 2020.
 %
 %O banco de dados TAQ Returns fornece dados de retorno em diferentes frequências, variando de frequência diária a frequências por minuto e por segundo. Por exemplo, você pode obter dados de retorno para intervalos como 30, 15, 5 e 1 minuto, bem como 30, 15 e 5 segundos. Isso permite uma análise mais detalhada e precisa do desempenho das ações em diferentes intervalos de tempo.
 %
-%O segundo banco de dados foi montado usando dois conjuntos diferentes de dados. O primeiro contém dados sobre PERMNO e TAQ\_TICKER. O segundo conjunto de dados também possui a coluna PERMNO, que é a variável que conectamos os dois conjuntos de dados e várias colunas que nos fornecem o percentis de empresas sobre onde estão localizadas com base em fatores financeiros. As empresas estão agrupadas em dez percentis. Assim, cada firma recebe valores entre 1 e 10.
+%O segundo banco de dados foi montado usando dois conjuntos diferentes de dados. O primeiro contém dados sobre PERMNO, TAQ\_TICKER e algumas características das firmas. O segundo conjunto de dados também possui a coluna PERMNO, que é a variável que conectamos os dois conjuntos de dados e várias colunas que nos fornecem o percentis de empresas sobre onde estão localizadas com base em fatores financeiros. As empresas estão agrupadas em dez percentis. Assim, cada firma recebe valores entre 1 e 10 para cada fator. A seguir, mostramos como cada fator financeiro foi construído.
 %
-%Com o banco de dados TAQ Returns e este último juntos, podemos construir alguns fatores amplamente utilizados na literatura de finanças. Mostramos a seguir como esses fatores são construídos.
+%
+%
+%Essa base de dados, a qual chamaremos de Factors, contém dados diários de Janeiro de 2005 à Dezembro de 2019.
+%
+%A Figura \ref{fig:match} apresenta um gráfico que ilustra a interseção das firmas entre a Factors Database e a TAQ Returns Database, durante o período de Janeiro de 2005 a Dezembro de 2019. O gráfico retrata a evolução do número de stocks presentes em cada uma das bases, bem como a quantidade de stocks em que há match em ambas as bases e que serão utilizadas para a formação dos portfólios. 
+%
+%Com o uso das bases de dados TAQ Returns e Factors, é possível criar portfólios de diversos fatores financeiros que são amplamente utilizados na literatura. No entanto, a construção desses portfolios pode variar bastante entre os estudos. Para garantir uma padronização na criação desses portfolios, adotaremos quatro estratégias distintas. As duas primeiras estratégias consistem em formar portfólios by longing (shorting) ações que estejam acima (abaixo) da mediana. A diferença entre essas estratégias será a forma de ponderação dos ativos, que poderá ser ponderada igual ou value ponderada. As outras duas metodologias irão utilizar os percentis 30 e 70 como breakpoints para a seleção de ações, isso é, longing (shorting) ações no tercil superior (tercil inferior).

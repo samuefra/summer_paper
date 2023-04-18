@@ -2,7 +2,7 @@ The first database of this work is TAQ Returns. The TAQ Returns Database is a fi
 
 The TAQ Returns database provides return data at different frequencies, ranging from daily frequency to minute and second frequencies. For example, you can get return data for intervals such as 30, 15, 5, and 1 minute, as well as 30, 15, and 5 seconds. This allows for a more detailed and accurate analysis of stock performance over different time frames.
 
-The second database was built using two different sets of data. The first contains data on PERMNO, TAQ\_TICKER and some firm characteristics. The second dataset also has the PERMNO column, which is the variable we connect the two datasets with, and several columns that give us the percentiles of companies on where they are located based on financial factors. Companies are grouped into ten percentiles. Thus, each firm receives values between 1 and 10 for each factor. Next, we show how each financial factor was constructed.
+The second database was built using two different sets of data. The first contains data on PERMNO, TAQ\_TICKER and some firm characteristics. The second dataset also has the PERMNO column, which is the variable we connect the two datasets with, and several columns that give us the percentiles of companies on where they are located based on financial factors. Companies are grouped into ten percentiles. Thus, each firm receives values between 1 and 10 for each factor, although some factors are binary variables and therefore firms only receive the values 1 and 10. Next, we show how each financial factor was constructed.
 
 
 \begin{enumerate}
@@ -14,7 +14,7 @@ The second database was built using two different sets of data. The first contai
 		size &= \mathrm{ME}_{\text{Jun}} \\
 	\end{align*}
 	
-	The CRSP end of June price times shares outstanding. Rebalanced annually.
+	The CRSP end of June price times shares outstanding. Rebalanced annually. 
 
 
 	
@@ -72,7 +72,7 @@ The second database was built using two different sets of data. The first contai
 		F\text{-}score = & 1_{\text{IB}>0} + 1_{\Delta \text{ROA}>0} + 1_{\text{CFO}>0} + 1_{\text{CFO}>\text{IB}} + 1_{\Delta \text{DTA}<0 | \text{DLTT}=0 | \text{DLTT}_{-12}=0} \\
 		& + 1_{\Delta \text{ATL}>0} + 1_{\text{EqIss} \leq 0} + 1_{\Delta \text{GM}>0} + 1_{\Delta \text{ATO}>0}
 	\end{align*}
-	where $\mathrm{IB}$ is income before extraordinary items, $\mathrm{ROA}$ is income before extraordinary items scaled by lagged total assets, $\mathrm{CFO}$ is cash flow from operations, $\mathrm{DTA}$ is total long-term debt scaled by total assets, $\mathrm{DLTT}$ is total long-term debt, $\mathrm{ATL}$ is total current assets scaled by total current liabilities, $\mathrm{EqIss}$ is the difference between sales of common stock and purchases of common stock recorded on the cash flow statement, $\mathrm{GM}$ equals one minus the ratio of cost of goods sold and total revenues, and $\mathrm{ATO}$ equals total revenues, scaled by total assets. Rebalanced annualy.
+	where $\mathrm{IB}$ is income before extraordinary items, $\mathrm{ROA}$ is income before extraordinary items scaled by lagged total assets, $\mathrm{CFO}$ is cash flow from operations, $\mathrm{DTA}$ is total long-term debt scaled by total assets, $\mathrm{DLTT}$ is total long-term debt, $\mathrm{ATL}$ is total current assets scaled by total current liabilities, $\mathrm{EqIss}$ is the difference between sales of common stock and purchases of common stock recorded on the cash flow statement, $\mathrm{GM}$ equals one minus the ratio of cost of goods sold and total revenues, and $\mathrm{ATO}$ equals total revenues, scaled by total assets. Rebalanced annualy. Binary variable.
 	
 	
 	
@@ -83,7 +83,7 @@ The second database was built using two different sets of data. The first contai
 	\begin{align*}
 		debtiss = 1_{\text{DLTISS} \leq 0}
 	\end{align*}
-	Binary variable equal to one if long-term debt issuance indicated in statement of cash flow. Updated annually.
+	Binary variable equal to one if long-term debt issuance indicated in statement of cash flow. Updated annually. Binary variable.
 	
 	
 	
@@ -94,7 +94,7 @@ The second database was built using two different sets of data. The first contai
 	\begin{align*}
 		repurch = 1_{\text{PRSTKC>0}}
 	\end{align*}
-	Binary variable equal to one if repurchase of common or preferred shares indicated in statement of cash flow. Updated annually.
+	Binary variable equal to one if repurchase of common or preferred shares indicated in statement of cash flow. Updated annually. Binary variable.
 	
 	
 	
@@ -484,12 +484,12 @@ The second database was built using two different sets of data. The first contai
 	
 
 
-	\item \textbf{Beta Arbitrage} ($beta$). 
+	\item \textbf{Beta Arbitrage} ($betaarb$). 
 	
 	Follows \citeonline{cooper2008asset}. 
 	
 	\begin{align*}
-		beta = \beta_{t-60:t-1}
+		betaarb = \beta_{t-60:t-1}
 	\end{align*}
 	Beta with respect to the CRSP equal-weighted return index. Estimated over the past 60 months (minimum 36 months) using daily data and lagged one month. Updated monthly.
 	
@@ -594,13 +594,13 @@ Figure \ref{fig:match} presents a graph that illustrates the intersection of fir
 
 Using the TAQ Returns and Factors databases, it is possible to create portfolios of various financial factors that are widely used in the literature. However, the construction of these portfolios can vary greatly between studies. To ensure standardization in the creation of these portfolios, we adopted four different strategies. The first two strategies consist of forming portfolios by longing (shorting) stocks that are above (below) the median. The difference between these strategies will be the way of weighting the assets, which can be equal weighted or value weighted. The other two methodologies will use the 30th and 70th percentiles as breakpoints for stock selection, that is, by longing (shorting) stocks in the upper three deciles (lower three deciles).
 
-Let $H_{f}^{br}$ be the vector of tickers that are above the breakpoint rule and $L_{f}^{br}$ be the vector of tickers that are below the breakpoint rule for some specific factor, where the superscript denotes the breakpoint rule $br = m, t$ ($m$ represents the median as the breakpoint rule and $t$ represents the three deciles as the breakpoint rule) and the subscript denotes the factor $f$. Also denote by $r_i$ the return on the share of the firm $i$ and $\omega_i \in \omega$ the weight based on the Market Cap of the firm $i$.
+Let $h_{f}^{b}$ (high) be the vector of tickers that are above the breakpoint rule $b$ and $l_{f}^{b}$ (low) be the vector of tickers that are below the breakpoint rule $b$ for some specific factor $f$, where the superscript denotes the breakpoint rule $b = m, t$ ($m$ represents the median as the breakpoint rule and $t$ represents the three deciles as the breakpoint rule) and the subscript denotes the factor $f$. Also denote by $r_i$ the return on the share of the firm $i$ and $\omega_i \in \omega$ the weight based on the Market Cap of the firm $i$.
 
 
 \begin{align*}
-	\omega_i = \frac{ME_i}{\sum_{i \in V} ME_i}
+	\omega_i = \frac{ME_i}{\sum_{i \in v} ME_i}
 \end{align*}
-for $V = H_{f}^{br}, L_{f}^{br}$.
+for $v = h_{f}^{b}, l_{f}^{b}$.
 
 
 Therefore, portfolios are formed as follows.
@@ -609,25 +609,27 @@ Therefore, portfolios are formed as follows.
 \begin{itemize}
 	\item \textbf{Equal Weighted Portfolio with Median Breakpoint}
 	\begin{align*}
-		f \text{ factor} = \frac{1}{\operatorname{len}(H_{f}^{m})}\sum_{i \in H_{f}^{m}} r_i - \frac{1}{\operatorname{len}(L_{f}^{m})}\sum_{i \in L_{f}^{m}} r_i
+		f \text{ factor} = \frac{1}{\operatorname{len}(h_{f}^{m})}\sum_{i \in h_{f}^{m}} r_i - \frac{1}{\operatorname{len}(l_{f}^{m})}\sum_{i \in l_{f}^{m}} r_i
 	\end{align*}
 	
 	\item \textbf{Value Weighted Portfolio with Median Breakpoint}
 	\begin{align*}
-		f \text{ factor} = \sum_{i \in H_{f}^{m}} \omega_i\cdot r_i - \sum_{i \in L_{f}^{m}} \omega_i\cdot r_i
+		f \text{ factor} = \sum_{i \in h_{f}^{m}} \omega_i\cdot r_i - \sum_{i \in l_{f}^{m}} \omega_i\cdot r_i
 	\end{align*}
 	
 	\item \textbf{Equal Weighted Portfolio with Three Decile Breakpoint}
 	\begin{align*}
-		f \text{ factor} = \frac{1}{\operatorname{len}(H_{f}^{t})}\sum_{i \in H_{f}^{t}} r_i - \frac{1}{\operatorname{len}(L_{f}^{t})}\sum_{i \in L_{f}^{t}} r_i
+		f \text{ factor} = \frac{1}{\operatorname{len}(h_{f}^{t})}\sum_{i \in h_{f}^{t}} r_i - \frac{1}{\operatorname{len}(l_{f}^{t})}\sum_{i \in l_{f}^{t}} r_i
 	\end{align*}
 	
 	\item \textbf{Value Weighted Portfolio with Three Decile Breakpoint}
 	\begin{align*}
-		f \text{ factor} = \sum_{i \in H_{f}^{t}} \omega_i\cdot r_i - \sum_{i \in L_{f}^{t}} \omega_i\cdot r_i
+		f \text{ factor} = \sum_{i \in h_{f}^{t}} \omega_i\cdot r_i - \sum_{i \in l_{f}^{t}} \omega_i\cdot r_i
 	\end{align*}
 \end{itemize}
-for $f= \text{Size}, \text{Value}, ..., \text{Share Volume}$.
+for $f= \text{Size}, \text{Value}, ..., \text{Share Volume}$, where $\operatorname{len}(\cdot)$ is a function that returns the amount of elements of some vector.
+
+The figures \ref{fig:size}, \ref{fig:value},..., \ref{fig:shvol} show the return distributions of the portfolios formed for all the financial factors mentioned above. For each financial factor, we will have four portfolios, one for each empirical strategy. Except for the factors whose variable is binary, that is, they only receive the values 1 and 10. These factors have portfolios that are independent of the breakpoint rule.
 
 
 
@@ -637,7 +639,7 @@ for $f= \text{Size}, \text{Value}, ..., \text{Share Volume}$.
 %
 %O banco de dados TAQ Returns fornece dados de retorno em diferentes frequências, variando de frequência diária a frequências por minuto e por segundo. Por exemplo, você pode obter dados de retorno para intervalos como 30, 15, 5 e 1 minuto, bem como 30, 15 e 5 segundos. Isso permite uma análise mais detalhada e precisa do desempenho das ações em diferentes intervalos de tempo.
 %
-%O segundo banco de dados foi montado usando dois conjuntos diferentes de dados. O primeiro contém dados sobre PERMNO, TAQ\_TICKER e algumas características das firmas. O segundo conjunto de dados também possui a coluna PERMNO, que é a variável que conectamos os dois conjuntos de dados e várias colunas que nos fornecem o percentis de empresas sobre onde estão localizadas com base em fatores financeiros. As empresas estão agrupadas em dez percentis. Assim, cada firma recebe valores entre 1 e 10 para cada fator. A seguir, mostramos como cada fator financeiro foi construído.
+%O segundo banco de dados foi montado usando dois conjuntos diferentes de dados. O primeiro contém dados sobre PERMNO, TAQ\_TICKER e algumas características das firmas. O segundo conjunto de dados também possui a coluna PERMNO, que é a variável que conectamos os dois conjuntos de dados e várias colunas que nos fornecem o percentis de empresas sobre onde estão localizadas com base em fatores financeiros. As empresas estão agrupadas em dez percentis. Assim, cada firma recebe valores entre 1 e 10 para cada fator, embora alguns fatores sejam variáveis binárias e então, as firmas recebem apenas os valores 1 e 10. A seguir, mostramos como cada fator financeiro foi construído.
 %
 %
 %
@@ -647,9 +649,11 @@ for $f= \text{Size}, \text{Value}, ..., \text{Share Volume}$.
 %
 %Com o uso das bases de dados TAQ Returns e Factors, é possível criar portfólios de diversos fatores financeiros que são amplamente utilizados na literatura. No entanto, a construção desses portfolios pode variar bastante entre os estudos. Para garantir uma padronização na criação desses portfolios, adotaremos quatro estratégias distintas. As duas primeiras estratégias consistem em formar portfólios by longing (shorting) ações que estejam acima (abaixo) da mediana. A diferença entre essas estratégias será a forma de ponderação dos ativos, que poderá ser ponderada igual ou value ponderada. As outras duas metodologias irão utilizar os percentis 30 e 70 como breakpoints para a seleção de ações, isso é, longing (shorting) ações nos três decis superior (três decis inferior).
 
-%Seja $H_{f}^{br}$ o vetor de tickers que estão acima da breakpoint rule e $L_{f}^{br}$ o vetor de tickers que estão abaixo da breakpoint rule para algum factor específico, onde o superescrito denota a breakpoint rule $br = m, t$ ($m$ representa mediana como breakpoint rule e $t$ representa os três decis como breakpoint rule) e o subescrito denota o fator $f$. Denote também por $r_i$ o retorno da ação da firma $i$ e $\omega_i \in \omega$ o peso baseado no Market Cap da firma $i$.
+%Seja $h_{f}^{b}$ o vetor de tickers que estão acima da breakpoint rule $b$ e $l_{f}^{b}$ o vetor de tickers que estão abaixo da breakpoint rule $b$ para algum factor $f$ específico, onde o superescrito denota a breakpoint rule $b = m, t$ ($m$ representa mediana como breakpoint rule e $t$ representa os três decis como breakpoint rule) e o subescrito denota o fator $f$. Denote também por $r_i$ o retorno da ação da firma $i$ e $\omega_i \in \omega$ o peso baseado no Market Cap da firma $i$.
 
 
 
 %Portanto, os portfólios são formados da seguinte maneira.
 
+
+%As figuras \ref{fig:size} até \ref{fig:shvol} mostram as distribuições de retornos dos portfólios formados para todos fatores financeiros anteriormente mencionados. Para cada fator financeiro, teremos quatro portfólios, um para cada estratégia empírica. Exceto para os fatores cujo variável é binária, isso é, recebem apenas os valores 1 e 10. Esses fatores têm portfólios independentes da breakpoint rule.

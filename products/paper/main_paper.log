@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.6)  5 APR 2023 22:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.6)  17 APR 2023 17:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1014,52 +1014,668 @@ Overfull \hbox (5.95576pt too wide) in paragraph at lines 17--18
 Or-di-nary Least Squares)
  []
 
-[2]) (sub/data.tex [3] [4] [5] [6] [7] [8] [9] [10]
-Overfull \hbox (0.64708pt too wide) detected at line 328
+[2]) (sub/data.tex [3] [4] [5] [6] [7] [8] [9]
+Overfull \hbox (0.64708pt too wide) detected at line 306
 []
  []
 
-[11] [12] [13]
-Overfull \hbox (26.07863pt too wide) in paragraph at lines 449--451
+[10] [11] [12]
+Overfull \hbox (26.07863pt too wide) in paragraph at lines 427--429
 \T1/ppl/m/n/12 where $[]$ is in-come be-fore ex-traor-di-nary items (up-dated q
 uar-terly), and $\OML/cmm/m/it/12 ^^[[]$
  []
 
-[14] [15] [16] [17]
-Overfull \hbox (2.52272pt too wide) in paragraph at lines 604--606
+[13] [14] [15] [16]
+Overfull \hbox (2.52272pt too wide) in paragraph at lines 582--584
 \T1/ppl/m/n/12 Average num-ber of shares traded over the pre-vi-ous three month
 s scaled by shares
  []
 
-[18]) (sub/conclusion.tex) [19] (main_paper.bbl [20] [21]) [22]
-(sub/appendix.tex
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
-2.
-
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 6
+10.
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-[23]
-<../../output/figures/match.png, id=367, 622.325pt x 375.4025pt>
+[17]) (sub/conclusion.tex [18]) [19] (main_paper.bbl [20] [21]) [22]
+(sub/appendix.tex [23]
+<../../output/figures/match.png, id=366, 622.325pt x 375.4025pt>
 File: ../../output/figures/match.png Graphic file (type png)
 <use ../../output/figures/match.png>
-Package pdftex.def Info: ../../output/figures/match.png  used on input line 34.
+Package pdftex.def Info: ../../output/figures/match.png  used on input line 35.
 
 (pdftex.def)             Requested size: 454.29347pt x 274.04155pt.
 
-Overfull \hbox (1.32558pt too wide) in paragraph at lines 34--36
+Overfull \hbox (1.32558pt too wide) in paragraph at lines 35--37
  [][] 
  []
 
-) [24 <../../output/figures/match.png>] (main_paper.aux)
+<../../output/figures/size.png, id=368, 749.80125pt x 389.455pt>
+File: ../../output/figures/size.png Graphic file (type png)
+<use ../../output/figures/size.png>
+Package pdftex.def Info: ../../output/figures/size.png  used on input line 44.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 44--46
+ [][] 
+ []
+
+<../../output/figures/value.png, id=369, 749.80125pt x 389.455pt>
+File: ../../output/figures/value.png Graphic file (type png)
+<use ../../output/figures/value.png>
+Package pdftex.def Info: ../../output/figures/value.png  used on input line 51.
+
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 51--53
+ [][] 
+ []
+
+[24 <../../output/figures/match.png> <../../output/figures/size.png>]
+<../../output/figures/prof.png, id=378, 749.80125pt x 389.455pt>
+File: ../../output/figures/prof.png Graphic file (type png)
+<use ../../output/figures/prof.png>
+Package pdftex.def Info: ../../output/figures/prof.png  used on input line 58.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 58--60
+ [][] 
+ []
+
+<../../output/figures/dur.png, id=379, 749.80125pt x 389.455pt>
+File: ../../output/figures/dur.png Graphic file (type png)
+<use ../../output/figures/dur.png>
+Package pdftex.def Info: ../../output/figures/dur.png  used on input line 65.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 65--67
+ [][] 
+ []
+
+[25 <../../output/figures/value.png> <../../output/figures/prof.png>]
+<../../output/figures/valprof.png, id=388, 749.80125pt x 389.455pt>
+File: ../../output/figures/valprof.png Graphic file (type png)
+<use ../../output/figures/valprof.png>
+Package pdftex.def Info: ../../output/figures/valprof.png  used on input line 7
+2.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 72--74
+ [][] 
+ []
+
+<../../output/figures/fscore.png, id=389, 749.80125pt x 389.455pt>
+File: ../../output/figures/fscore.png Graphic file (type png)
+<use ../../output/figures/fscore.png>
+Package pdftex.def Info: ../../output/figures/fscore.png  used on input line 79
+.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 79--81
+ [][] 
+ []
+
+[26 <../../output/figures/dur.png> <../../output/figures/valprof.png>]
+<../../output/figures/debtiss.png, id=398, 749.80125pt x 389.455pt>
+File: ../../output/figures/debtiss.png Graphic file (type png)
+<use ../../output/figures/debtiss.png>
+Package pdftex.def Info: ../../output/figures/debtiss.png  used on input line 8
+6.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 86--88
+ [][] 
+ []
+
+<../../output/figures/repurch.png, id=399, 749.80125pt x 389.455pt>
+File: ../../output/figures/repurch.png Graphic file (type png)
+<use ../../output/figures/repurch.png>
+Package pdftex.def Info: ../../output/figures/repurch.png  used on input line 9
+3.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 93--95
+ [][] 
+ []
+
+[27 <../../output/figures/fscore.png> <../../output/figures/debtiss.png>]
+<../../output/figures/nissa.png, id=408, 749.80125pt x 389.455pt>
+File: ../../output/figures/nissa.png Graphic file (type png)
+<use ../../output/figures/nissa.png>
+Package pdftex.def Info: ../../output/figures/nissa.png  used on input line 100
+.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 100--102
+ [][] 
+ []
+
+<../../output/figures/accruals.png, id=409, 755.82375pt x 389.455pt>
+File: ../../output/figures/accruals.png Graphic file (type png)
+<use ../../output/figures/accruals.png>
+Package pdftex.def Info: ../../output/figures/accruals.png  used on input line 
+107.
+(pdftex.def)             Requested size: 476.17148pt x 245.35794pt.
+
+Overfull \hbox (23.20358pt too wide) in paragraph at lines 107--109
+ [][] 
+ []
+
+[28 <../../output/figures/repurch.png> <../../output/figures/nissa.png>]
+<../../output/figures/growth.png, id=418, 749.80125pt x 389.455pt>
+File: ../../output/figures/growth.png Graphic file (type png)
+<use ../../output/figures/growth.png>
+Package pdftex.def Info: ../../output/figures/growth.png  used on input line 11
+4.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 114--116
+ [][] 
+ []
+
+<../../output/figures/aturnover.png, id=419, 749.80125pt x 389.455pt>
+File: ../../output/figures/aturnover.png Graphic file (type png)
+<use ../../output/figures/aturnover.png>
+Package pdftex.def Info: ../../output/figures/aturnover.png  used on input line
+ 121.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 121--123
+ [][] 
+ []
+
+[29 <../../output/figures/accruals.png> <../../output/figures/growth.png>]
+<../../output/figures/gmargins.png, id=428, 749.80125pt x 389.455pt>
+File: ../../output/figures/gmargins.png Graphic file (type png)
+<use ../../output/figures/gmargins.png>
+Package pdftex.def Info: ../../output/figures/gmargins.png  used on input line 
+128.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 128--130
+ [][] 
+ []
+
+<../../output/figures/divp.png, id=429, 749.80125pt x 389.455pt>
+File: ../../output/figures/divp.png Graphic file (type png)
+<use ../../output/figures/divp.png>
+Package pdftex.def Info: ../../output/figures/divp.png  used on input line 135.
+
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 135--137
+ [][] 
+ []
+
+[30 <../../output/figures/aturnover.png> <../../output/figures/gmargins.png>]
+<../../output/figures/ep.png, id=439, 749.80125pt x 389.455pt>
+File: ../../output/figures/ep.png Graphic file (type png)
+<use ../../output/figures/ep.png>
+Package pdftex.def Info: ../../output/figures/ep.png  used on input line 142.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 142--144
+ [][] 
+ []
+
+<../../output/figures/cfp.png, id=440, 749.80125pt x 389.455pt>
+File: ../../output/figures/cfp.png Graphic file (type png)
+<use ../../output/figures/cfp.png>
+Package pdftex.def Info: ../../output/figures/cfp.png  used on input line 149.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 149--151
+ [][] 
+ []
+
+[31 <../../output/figures/divp.png> <../../output/figures/ep.png>]
+<../../output/figures/noa.png, id=449, 749.80125pt x 389.455pt>
+File: ../../output/figures/noa.png Graphic file (type png)
+<use ../../output/figures/noa.png>
+Package pdftex.def Info: ../../output/figures/noa.png  used on input line 156.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 156--158
+ [][] 
+ []
+
+<../../output/figures/inv.png, id=450, 749.80125pt x 389.455pt>
+File: ../../output/figures/inv.png Graphic file (type png)
+<use ../../output/figures/inv.png>
+Package pdftex.def Info: ../../output/figures/inv.png  used on input line 163.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 163--165
+ [][] 
+ []
+
+[32 <../../output/figures/cfp.png> <../../output/figures/noa.png>]
+<../../output/figures/invcap.png, id=459, 749.80125pt x 389.455pt>
+File: ../../output/figures/invcap.png Graphic file (type png)
+<use ../../output/figures/invcap.png>
+Package pdftex.def Info: ../../output/figures/invcap.png  used on input line 17
+0.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 170--172
+ [][] 
+ []
+
+<../../output/figures/igrowth.png, id=460, 755.82375pt x 389.455pt>
+File: ../../output/figures/igrowth.png Graphic file (type png)
+<use ../../output/figures/igrowth.png>
+Package pdftex.def Info: ../../output/figures/igrowth.png  used on input line 1
+77.
+(pdftex.def)             Requested size: 476.17148pt x 245.35794pt.
+
+Overfull \hbox (23.20358pt too wide) in paragraph at lines 177--179
+ [][] 
+ []
+
+[33 <../../output/figures/inv.png> <../../output/figures/invcap.png>]
+<../../output/figures/sgrowth.png, id=469, 749.80125pt x 389.455pt>
+File: ../../output/figures/sgrowth.png Graphic file (type png)
+<use ../../output/figures/sgrowth.png>
+Package pdftex.def Info: ../../output/figures/sgrowth.png  used on input line 1
+84.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 184--186
+ [][] 
+ []
+
+<../../output/figures/lev.png, id=470, 749.80125pt x 389.455pt>
+File: ../../output/figures/lev.png Graphic file (type png)
+<use ../../output/figures/lev.png>
+Package pdftex.def Info: ../../output/figures/lev.png  used on input line 191.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 191--193
+ [][] 
+ []
+
+[34 <../../output/figures/igrowth.png> <../../output/figures/sgrowth.png>]
+<../../output/figures/roaa.png, id=479, 749.80125pt x 389.455pt>
+File: ../../output/figures/roaa.png Graphic file (type png)
+<use ../../output/figures/roaa.png>
+Package pdftex.def Info: ../../output/figures/roaa.png  used on input line 198.
+
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 198--200
+ [][] 
+ []
+
+<../../output/figures/roea.png, id=480, 749.80125pt x 389.455pt>
+File: ../../output/figures/roea.png Graphic file (type png)
+<use ../../output/figures/roea.png>
+Package pdftex.def Info: ../../output/figures/roea.png  used on input line 205.
+
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 205--207
+ [][] 
+ []
+
+[35 <../../output/figures/lev.png> <../../output/figures/roaa.png>]
+<../../output/figures/sp.png, id=489, 749.80125pt x 389.455pt>
+File: ../../output/figures/sp.png Graphic file (type png)
+<use ../../output/figures/sp.png>
+Package pdftex.def Info: ../../output/figures/sp.png  used on input line 212.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 212--214
+ [][] 
+ []
+
+<../../output/figures/gltnoa.png, id=490, 755.82375pt x 389.455pt>
+File: ../../output/figures/gltnoa.png Graphic file (type png)
+<use ../../output/figures/gltnoa.png>
+Package pdftex.def Info: ../../output/figures/gltnoa.png  used on input line 21
+9.
+(pdftex.def)             Requested size: 476.17148pt x 245.35794pt.
+
+Overfull \hbox (23.20358pt too wide) in paragraph at lines 219--221
+ [][] 
+ []
+
+[36 <../../output/figures/roea.png> <../../output/figures/sp.png>]
+<../../output/figures/divg.png, id=500, 755.82375pt x 389.455pt>
+File: ../../output/figures/divg.png Graphic file (type png)
+<use ../../output/figures/divg.png>
+Package pdftex.def Info: ../../output/figures/divg.png  used on input line 226.
+
+(pdftex.def)             Requested size: 476.17148pt x 245.35794pt.
+
+Overfull \hbox (23.20358pt too wide) in paragraph at lines 226--228
+ [][] 
+ []
+
+<../../output/figures/invaci.png, id=501, 749.80125pt x 389.455pt>
+File: ../../output/figures/invaci.png Graphic file (type png)
+<use ../../output/figures/invaci.png>
+Package pdftex.def Info: ../../output/figures/invaci.png  used on input line 23
+3.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 233--235
+ [][] 
+ []
+
+[37 <../../output/figures/gltnoa.png> <../../output/figures/divg.png>]
+<../../output/figures/mom.png, id=510, 749.80125pt x 389.455pt>
+File: ../../output/figures/mom.png Graphic file (type png)
+<use ../../output/figures/mom.png>
+Package pdftex.def Info: ../../output/figures/mom.png  used on input line 240.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 240--242
+ [][] 
+ []
+
+<../../output/figures/indmom.png, id=511, 749.80125pt x 389.455pt>
+File: ../../output/figures/indmom.png Graphic file (type png)
+<use ../../output/figures/indmom.png>
+Package pdftex.def Info: ../../output/figures/indmom.png  used on input line 24
+7.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 247--249
+ [][] 
+ []
+
+[38 <../../output/figures/invaci.png> <../../output/figures/mom.png>]
+<../../output/figures/valmom.png, id=520, 749.80125pt x 389.455pt>
+File: ../../output/figures/valmom.png Graphic file (type png)
+<use ../../output/figures/valmom.png>
+Package pdftex.def Info: ../../output/figures/valmom.png  used on input line 25
+4.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 254--256
+ [][] 
+ []
+
+<../../output/figures/valmomprof.png, id=521, 749.80125pt x 389.455pt>
+File: ../../output/figures/valmomprof.png Graphic file (type png)
+<use ../../output/figures/valmomprof.png>
+Package pdftex.def Info: ../../output/figures/valmomprof.png  used on input lin
+e 261.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 261--263
+ [][] 
+ []
+
+[39 <../../output/figures/indmom.png> <../../output/figures/valmom.png>]
+<../../output/figures/shortint.png, id=530, 749.80125pt x 389.455pt>
+File: ../../output/figures/shortint.png Graphic file (type png)
+<use ../../output/figures/shortint.png>
+Package pdftex.def Info: ../../output/figures/shortint.png  used on input line 
+268.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 268--270
+ [][] 
+ []
+
+<../../output/figures/mom12.png, id=531, 749.80125pt x 389.455pt>
+File: ../../output/figures/mom12.png Graphic file (type png)
+<use ../../output/figures/mom12.png>
+Package pdftex.def Info: ../../output/figures/mom12.png  used on input line 275
+.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 275--277
+ [][] 
+ []
+
+[40 <../../output/figures/valmomprof.png> <../../output/figures/shortint.png>]
+<../../output/figures/momrev.png, id=540, 749.80125pt x 389.455pt>
+File: ../../output/figures/momrev.png Graphic file (type png)
+<use ../../output/figures/momrev.png>
+Package pdftex.def Info: ../../output/figures/momrev.png  used on input line 28
+2.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 282--284
+ [][] 
+ []
+
+<../../output/figures/lrrev.png, id=541, 749.80125pt x 389.455pt>
+File: ../../output/figures/lrrev.png Graphic file (type png)
+<use ../../output/figures/lrrev.png>
+Package pdftex.def Info: ../../output/figures/lrrev.png  used on input line 289
+.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 289--291
+ [][] 
+ []
+
+[41 <../../output/figures/mom12.png> <../../output/figures/momrev.png>]
+<../../output/figures/valuem.png, id=550, 749.80125pt x 389.455pt>
+File: ../../output/figures/valuem.png Graphic file (type png)
+<use ../../output/figures/valuem.png>
+Package pdftex.def Info: ../../output/figures/valuem.png  used on input line 29
+6.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 296--298
+ [][] 
+ []
+
+<../../output/figures/nissm.png, id=551, 749.80125pt x 389.455pt>
+File: ../../output/figures/nissm.png Graphic file (type png)
+<use ../../output/figures/nissm.png>
+Package pdftex.def Info: ../../output/figures/nissm.png  used on input line 303
+.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 303--305
+ [][] 
+ []
+
+[42 <../../output/figures/lrrev.png> <../../output/figures/valuem.png>]
+<../../output/figures/sue.png, id=561, 749.80125pt x 389.455pt>
+File: ../../output/figures/sue.png Graphic file (type png)
+<use ../../output/figures/sue.png>
+Package pdftex.def Info: ../../output/figures/sue.png  used on input line 310.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 310--312
+ [][] 
+ []
+
+<../../output/figures/roe.png, id=562, 749.80125pt x 389.455pt>
+File: ../../output/figures/roe.png Graphic file (type png)
+<use ../../output/figures/roe.png>
+Package pdftex.def Info: ../../output/figures/roe.png  used on input line 317.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 317--319
+ [][] 
+ []
+
+[43 <../../output/figures/nissm.png> <../../output/figures/sue.png>]
+<../../output/figures/rome.png, id=571, 749.80125pt x 389.455pt>
+File: ../../output/figures/rome.png Graphic file (type png)
+<use ../../output/figures/rome.png>
+Package pdftex.def Info: ../../output/figures/rome.png  used on input line 324.
+
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 324--326
+ [][] 
+ []
+
+<../../output/figures/roa.png, id=572, 749.80125pt x 389.455pt>
+File: ../../output/figures/roa.png Graphic file (type png)
+<use ../../output/figures/roa.png>
+Package pdftex.def Info: ../../output/figures/roa.png  used on input line 331.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 331--333
+ [][] 
+ []
+
+[44 <../../output/figures/roe.png> <../../output/figures/rome.png>]
+<../../output/figures/strev.png, id=581, 749.80125pt x 389.455pt>
+File: ../../output/figures/strev.png Graphic file (type png)
+<use ../../output/figures/strev.png>
+Package pdftex.def Info: ../../output/figures/strev.png  used on input line 338
+.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 338--340
+ [][] 
+ []
+
+<../../output/figures/ivol.png, id=582, 749.80125pt x 389.455pt>
+File: ../../output/figures/ivol.png Graphic file (type png)
+<use ../../output/figures/ivol.png>
+Package pdftex.def Info: ../../output/figures/ivol.png  used on input line 345.
+
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 345--347
+ [][] 
+ []
+
+[45 <../../output/figures/roa.png> <../../output/figures/strev.png>]
+<../../output/figures/betaarb.png, id=591, 748.7975pt x 389.455pt>
+File: ../../output/figures/betaarb.png Graphic file (type png)
+<use ../../output/figures/betaarb.png>
+Package pdftex.def Info: ../../output/figures/betaarb.png  used on input line 3
+52.
+(pdftex.def)             Requested size: 471.74492pt x 245.35794pt.
+
+Overfull \hbox (18.77702pt too wide) in paragraph at lines 352--354
+ [][] 
+ []
+
+<../../output/figures/season.png, id=592, 749.80125pt x 389.455pt>
+File: ../../output/figures/season.png Graphic file (type png)
+<use ../../output/figures/season.png>
+Package pdftex.def Info: ../../output/figures/season.png  used on input line 35
+9.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 359--361
+ [][] 
+ []
+
+[46 <../../output/figures/ivol.png> <../../output/figures/betaarb.png>]
+<../../output/figures/indrrev.png, id=601, 749.80125pt x 389.455pt>
+File: ../../output/figures/indrrev.png Graphic file (type png)
+<use ../../output/figures/indrrev.png>
+Package pdftex.def Info: ../../output/figures/indrrev.png  used on input line 3
+66.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 366--368
+ [][] 
+ []
+
+<../../output/figures/indrrevlv.png, id=602, 749.80125pt x 389.455pt>
+File: ../../output/figures/indrrevlv.png Graphic file (type png)
+<use ../../output/figures/indrrevlv.png>
+Package pdftex.def Info: ../../output/figures/indrrevlv.png  used on input line
+ 373.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 373--375
+ [][] 
+ []
+
+[47 <../../output/figures/season.png> <../../output/figures/indrrev.png>]
+<../../output/figures/indmomrev.png, id=611, 749.80125pt x 389.455pt>
+File: ../../output/figures/indmomrev.png Graphic file (type png)
+<use ../../output/figures/indmomrev.png>
+Package pdftex.def Info: ../../output/figures/indmomrev.png  used on input line
+ 380.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 380--382
+ [][] 
+ []
+
+<../../output/figures/ciss.png, id=612, 749.80125pt x 389.455pt>
+File: ../../output/figures/ciss.png Graphic file (type png)
+<use ../../output/figures/ciss.png>
+Package pdftex.def Info: ../../output/figures/ciss.png  used on input line 387.
+
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 387--389
+ [][] 
+ []
+
+[48 <../../output/figures/indrrevlv.png> <../../output/figures/indmomrev.png>]
+<../../output/figures/price.png, id=622, 749.80125pt x 389.455pt>
+File: ../../output/figures/price.png Graphic file (type png)
+<use ../../output/figures/price.png>
+Package pdftex.def Info: ../../output/figures/price.png  used on input line 394
+.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 394--396
+ [][] 
+ []
+
+<../../output/figures/age.png, id=623, 749.80125pt x 389.455pt>
+File: ../../output/figures/age.png Graphic file (type png)
+<use ../../output/figures/age.png>
+Package pdftex.def Info: ../../output/figures/age.png  used on input line 401.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 401--403
+ [][] 
+ []
+
+[49 <../../output/figures/ciss.png> <../../output/figures/price.png>]
+<../../output/figures/shvol.png, id=632, 749.80125pt x 389.455pt>
+File: ../../output/figures/shvol.png Graphic file (type png)
+<use ../../output/figures/shvol.png>
+Package pdftex.def Info: ../../output/figures/shvol.png  used on input line 408
+.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 408--410
+ [][] 
+ []
+
+<../../output/figures/exchsw.png, id=633, 748.7975pt x 389.455pt>
+File: ../../output/figures/exchsw.png Graphic file (type png)
+<use ../../output/figures/exchsw.png>
+Package pdftex.def Info: ../../output/figures/exchsw.png  used on input line 41
+5.
+(pdftex.def)             Requested size: 471.74492pt x 245.35794pt.
+
+Overfull \hbox (18.77702pt too wide) in paragraph at lines 415--417
+ [][] 
+ []
+
+[50 <../../output/figures/age.png> <../../output/figures/shvol.png>]
+<../../output/figures/ipo.png, id=642, 749.80125pt x 389.455pt>
+File: ../../output/figures/ipo.png Graphic file (type png)
+<use ../../output/figures/ipo.png>
+Package pdftex.def Info: ../../output/figures/ipo.png  used on input line 422.
+(pdftex.def)             Requested size: 472.37729pt x 245.35794pt.
+
+Overfull \hbox (19.4094pt too wide) in paragraph at lines 422--424
+ [][] 
+ []
+
+) [51 <../../output/figures/exchsw.png> <../../output/figures/ipo.png>]
+(main_paper.aux)
 Package rerunfilecheck Info: File `main_paper.out' has not changed.
 (rerunfilecheck)             Checksum: F45A73D608CBF66FF791DC18D68D05F0;519.
  ) 
 Here is how much of TeX's memory you used:
- 25774 strings out of 476339
- 503550 string characters out of 5787176
+ 26293 strings out of 476339
+ 517473 string characters out of 5787176
  1861340 words of memory out of 5000000
- 45535 multiletter control sequences out of 15000+600000
+ 45920 multiletter control sequences out of 15000+600000
  544879 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,145p,1182b,673s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1067,22 +1683,23 @@ Here is how much of TeX's memory you used:
 C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 mex10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmmi12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Usuario/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/Usuario/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/
-Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><
-C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmsy6.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Usuario/AppData/Local/Programs
-/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/Usuario/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/Usuario/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main_paper.pdf (25 pages, 325709 bytes).
+1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Usuario/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Usuario/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/
+Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+<C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr6.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmr8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Usuario/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Usuario/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/Usuario/AppData
+/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/Usuario/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main_paper.pdf (52 pages, 2413274 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
- 126 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 760 PDF objects out of 1000 (max. 8388607)
+ 208 named destinations out of 1000 (max. 500000)
+ 341 words of extra memory for PDF output out of 10000 (max. 10000000)
 

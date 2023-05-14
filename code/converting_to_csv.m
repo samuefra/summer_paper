@@ -1,22 +1,22 @@
-% primeiro criaremos um range de datas apenas com dias úteis
+% first, we create a daterange with just business days
 bdates = datestr(busdays('01/01/05','12/31/19', 'daily'),'yyyymmdd')
 
-% clc limpa o command window
-% clear limpa o workspace
+% clc clears the command window
+% clear clears the workspace
 
 for i = 1:length(bdates)
     try
-        % um dos dias (nome do arquivo .mat)
+        % one of the days (.mat file name)
         day = bdates(i,1:8);
-        % path do input (arquivo que faremos load)
+        % input path (file whose we will make load)
         path_input = append('C:\Users\Usuario\Dropbox\TAQ_Returns\1Min\By date\',day,'.mat')
-        % path do output (arquivo que estará convertido em csv)
+        % output path (file whose will be converted to csv)
         path_output = append('D:\github\summer_paper\input\by_date\returns\',day,'.csv')
-        % load do arquivo
+        % file load
         load(path_input)
-        % download do arquivo em csv
+        % csv file download
         writetable(Returns, path_output);
     catch
-        % faz nada
+        % do nothing 
     end
 end
